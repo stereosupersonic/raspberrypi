@@ -14,7 +14,7 @@ backup_files="/home /etc /root"
 dest="/data/backups"
 
 # Create archive filename.
-day=$(date +%A)
+day=$(date +%Y-%m-%d_%H-%M)
 hostname=$(hostname -s)
 archive_file="$hostname-$day-backup.tgz"
 
