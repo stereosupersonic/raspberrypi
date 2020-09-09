@@ -18,12 +18,27 @@ services:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
     networks:
       - traefik-net
- 
+
+  postgreSql:
+    restart: always
+    image: michaelmiklis/rpi-monitor
+    container_name: postgresdb
+    image: postgres:12
+    ports:
+      - "5432:5432"
+    volumes:
+      - /data/postgresql/data:/var/lib/postgresql/data 
+    environment:
+      - POSTGRES_PASSWORD=postgres_pw 
+    networks:
+      - traefik-net
+
   rpi-monitor:
     restart: always
     image: michaelmiklis/rpi-monitor
     container_name: rpimon
-    image: michaelmiklis/rpi-monitor
+    networks:
+      - traefik-net
     ports:
       - "8888:8888"
     devices:
