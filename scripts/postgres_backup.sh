@@ -2,7 +2,7 @@
 
 # add it to cron like
 # every day at 1 am
-# * 1 * * * ruby /home/stereosonic/raspberrypi/scripts/postgresql_backup >> /tmp/postgres_backup.log 2>&1
+# * 1 * * * /home/stereosonic/raspberrypi/scripts/postgres_backup.sh >> /tmp/postgres_backup.log 2>&1
 
 # 2>&1 means  redirect stderr to stdout https://stackoverflow.com/questions/818255/in-the-shell-what-does-21-mean
 
