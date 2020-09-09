@@ -27,7 +27,8 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - /data/postgresql/data:/var/lib/postgresql/data 
+      - /data/postgresql/data:/var/lib/postgresql/data
+      - /data/backups/postgresql:/backups
     environment:
       - POSTGRES_PASSWORD=postgres_pw 
     networks:
