@@ -18,6 +18,7 @@ services:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
     networks:
       - traefik-net
+ 
   rpi-monitor:
     restart: always
     image: michaelmiklis/rpi-monitor
@@ -48,6 +49,7 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.whoami.rule=Host(`whoami.deimel.de`)"
       - "traefik.http.routers.whoami.entrypoints=web"
+ 
   portainer:
     image: portainer/portainer
     command: -H unix:///var/run/docker.sock
