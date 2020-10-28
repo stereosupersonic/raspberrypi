@@ -1,4 +1,12 @@
 #!/usr/bin/env ruby
+
+######################################################################################
+# outputs general system informations
+# 2020-10-28_08:45:47 raspberrypi4: up 57 minutes - local 192.168.1.69 remote:84.149.140.5 mem_used:23.7% temp=50.0'C - System: Linux raspberrypi4 5.4.51-v7l+ #1333 SMP Mon Aug 10 16:51:40 BST 2020 armv7l
+# put this to cron like
+# */5 * * * * sudo raspberrypi/scripts/raspi-info >> /data/backups/`hostname`.log 2>&1
+######################################################################################
+
 temp = `vcgencmd measure_temp`.strip
 sys_info= `uname -a`.strip
 uptime=`uptime -p`.strip
