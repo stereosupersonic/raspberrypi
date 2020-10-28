@@ -14,5 +14,6 @@ local_ip=`ifconfig eth0 | grep -w "inet" | tr -s " " | cut -f3 -d" "`.strip
 remote_ip=`dig +short myip.opendns.com @resolver1.opendns.com`.strip
 memory_used=`free | grep Mem | awk '{print $3/$2 * 100.0}'`.strip.to_f.round(1)
 hostname=`hostname`.strip
+hd_used=`df --output=pcent /dev/sda1  | tr -dc '0-9'`
 
-puts "#{Time.now.strftime("%Y-%m-%d_%H:%M:%S")} #{hostname}: #{uptime} - local #{local_ip} remote:#{remote_ip} mem_used:#{memory_used}% #{temp} - System: #{sys_info}"
+puts "#{Time.now.strftime("%Y-%m-%d_%H:%M:%S")} #{hostname}: #{uptime} - local:#{local_ip} remote:#{remote_ip} hd_used:#{hd_used}% mem_used:#{memory_used}% #{temp} - System: #{sys_info}"
