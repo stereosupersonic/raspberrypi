@@ -11,7 +11,7 @@
 backup_files="/home /etc /root"
 
 # Where to backup to.
-dest="/data/backups"
+dest="/data/backups/backups"
 
 # Create archive filename.
 day=$(date +%Y-%m-%d_%H-%M)
