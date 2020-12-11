@@ -3,7 +3,7 @@
 some scripts and docs about raspberry
 
 
-## setup traefik 
+## setup traefik
 
 git clone git@github.com:stereosupersonic/raspberrypi.git
 
@@ -35,4 +35,8 @@ example
 
 cat /data/backups/radiar_production_2020-08-09-02:00:08.dump.sql | docker exec -i postgresdb pg_restore -U postgres -d radiar_production
 
+
+# setup a grafana system dashboard
+
+https://grafana.com/grafana/dashboards/5955
 
