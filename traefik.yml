@@ -86,6 +86,7 @@ services:
       - /data/grafana:/var/lib/grafana
     networks:
       - traefik-net
+    user: '1001'
 
 networks:
   traefik-net:
