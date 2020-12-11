@@ -40,3 +40,4 @@ cat /data/backups/radiar_production_2020-08-09-02:00:08.dump.sql | docker exec -
 
 https://grafana.com/grafana/dashboards/5955
 
+Raspi Monitoring: https://grafana.com/grafana/dashboards/10578
