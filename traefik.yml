@@ -102,6 +102,8 @@ services:
       - influxdb
     volumes:
       - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
+      # for mesure the raspi temperature
+      - /opt/vc:/opt/vc/
 
   grafana:
     image: grafana/grafana:7.3.5
