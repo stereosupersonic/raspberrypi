@@ -30,7 +30,7 @@ services:
       - /data/postgresql/data:/var/lib/postgresql/data
       - /data/backups/postgresql:/backups
     environment:
-      - POSTGRES_PASSWORD=postgres_pw 
+      - POSTGRES_PASSWORD=postgres_pw
     networks:
       - traefik-net
 
@@ -65,7 +65,7 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.whoami.rule=Host(`whoami.deimel.de`)"
       - "traefik.http.routers.whoami.entrypoints=web"
- 
+
   portainer:
     image: portainer/portainer
     command: -H unix:///var/run/docker.sock
@@ -76,6 +76,17 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /data/portainer:/data
+
+  grafana:
+    image: grafana/grafana:7.3.5
+    restart: always
+    ports:
+      - 3000:3000
+    volumes:
+      - /data/grafana:/var/lib/grafana
+    networks:
+      - traefik-net
+
 networks:
   traefik-net:
     external: true
