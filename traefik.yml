@@ -108,6 +108,7 @@ services:
       - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
       - /opt/vc:/opt/vc
       - /usr/lib/:/dockerhost/usr/lib/:ro
+    user: '1001'
 
   grafana:
     image: grafana/grafana:7.3.5
