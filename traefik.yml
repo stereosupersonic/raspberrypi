@@ -81,7 +81,7 @@ services:
     image: grafana/grafana:7.3.5
     restart: always
     ports:
-      - 3000:3000
+      - 3000:3100
     volumes:
       - /data/grafana:/var/lib/grafana
     networks:
