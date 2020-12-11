@@ -86,6 +86,8 @@ services:
       - '8090:8090'
     environment:
       - INFLUXDB_DB=db0
+    networks:
+      - traefik-net
     volumes:
       # Data persistency
       # mkdir -p /data/influxdb
