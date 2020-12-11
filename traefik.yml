@@ -96,6 +96,8 @@ services:
   telegraf:
     image: telegraf:latest
     container_name: telegraf
+    networks:
+     - traefik-net
     links:
       - influxdb
     volumes:
