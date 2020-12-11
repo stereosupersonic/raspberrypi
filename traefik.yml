@@ -102,12 +102,8 @@ services:
      - traefik-net
     links:
       - influxdb
-    environment:
-      - LD_LIBRARY_PATH=/opt/vc/lib
     volumes:
       - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
-      - /opt/vc:/opt/vc
-      - /usr/lib/:/dockerhost/usr/lib/:ro
 
   grafana:
     image: grafana/grafana:7.3.5
