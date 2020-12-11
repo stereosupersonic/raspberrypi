@@ -101,7 +101,7 @@ services:
     links:
       - influxdb
     environment:
-      - LD_LIBRARY_PATH: /opt/vc/lib
+      - LD_LIBRARY_PATH=/opt/vc/lib
     volumes:
       - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
       - /opt/vc:/opt/vc
