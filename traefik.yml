@@ -80,6 +80,7 @@ services:
   influxdb:
     image: influxdb:latest
     container_name: influxdb
+    restart: always
     ports:
       - '8083:8083'
       - '8086:8086'
@@ -96,6 +97,7 @@ services:
   telegraf:
     image: telegraf:latest
     container_name: telegraf
+    restart: always
     networks:
      - traefik-net
     links:
